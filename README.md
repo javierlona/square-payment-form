@@ -1,0 +1,8 @@
+Populate an env file with the following credentials
+PROD_ACCESS_TOKEN=
+PROD_APP_ID=
+PROD_LOCATION_ID=
+SANDBOX_ACCESS_TOKEN=
+SANDBOX_APP_ID=
+SANDBOX_LOCATION_ID=
+USE_PROD=
