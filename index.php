@@ -49,51 +49,71 @@ $dotenv->load();
     });
 
   </script>
-  <div class="container">
-  <!-- Begin Payment Form -->
-  <div class="sq-payment-form">
-    <div id="sq-ccbox">
-      <form id="nonce-form" novalidate action="./process-card.php" method="post">
-        <div class="form-group">
-          <label class="sq-label">Cantidad</label>
-          <input id="sq-amount" name="amount" type="number" required class="form-control" autofocus>
-          <div class="invalid-feedback">
-          Ingrese una cantidad válida
-          </div>
-        </div>
-        <div class="sq-field">
-          <label class="sq-label">Número de tarjeta</label>
-          <div id="sq-card-number"></div>
-        </div>
-        <div class="sq-field-wrapper">
-          <div class="sq-field sq-field--in-wrapper">
-            <label class="sq-label">CVV</label>
-            <div id="sq-cvv"></div>
-          </div>
-          <div class="sq-field sq-field--in-wrapper">
-            <label class="sq-label">Vencimiento</label>
-            <div id="sq-expiration-date"></div>
-          </div>
-          <div class="sq-field sq-field--in-wrapper">
-            <label class="sq-label">Postal</label>
-            <div id="sq-postal-code"></div>
-          </div>
-        </div>
-
-        <div class="sq-field">
-          <button id="sq-creditcard" class="sq-button" onclick="requestCardNonce(event)">
-            Pague Ahora
-          </button>
-        </div>
-        <!--
-          After a nonce is generated it will be assigned to this hidden input field.
-        -->
-        <div id="error"></div>
-        <input type="hidden" id="card-nonce" name="nonce">
-      </form>
-    </div>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="#">(214) 111 - 3333</a>
+      <a class="p-2 text-dark" href="#">email@example.com</a>
+    </nav>
+    <a class="p-2 text-dark" href="#">123 Main St, Arlington, TX 76017</a>
+    <a class="p-2 text-dark no-hover" href="#">M - F: 8AM - 5PM</a>
+    <a class="p-2 text-dark no-hover" href="#">SAT: 10AM - 7PM</a>
+    <a class="p-2 text-dark no-hover" href="#">SUN: Closed</a>
   </div>
-  <!-- End Payment Form -->
+  <div class="container">
+
+  <div class="py-3 text-center">
+   <img class="d-block mx-auto mb-4" src="dummy-logo-300x140.png" alt="" width="25%" height="25%">
+    <h2>Payment Form</h2>
+    <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
+  </div>
+    <div class="row">
+      <!-- Begin Payment Form -->
+      <div class="sq-payment-form">
+      <div id="sq-ccbox">
+        <form id="nonce-form" novalidate action="./process-card.php" method="post">
+          <div class="form-group">
+            <label class="sq-label">Cantidad</label>
+            <input id="sq-amount" name="amount" type="number" required class="form-control" autofocus>
+            <div class="invalid-feedback">
+            Ingrese una cantidad válida
+            </div>
+          </div>
+          <div class="sq-field">
+            <label class="sq-label">Número de tarjeta</label>
+            <div id="sq-card-number"></div>
+          </div>
+          <div class="sq-field-wrapper">
+            <div class="sq-field sq-field--in-wrapper">
+              <label class="sq-label">CVV</label>
+              <div id="sq-cvv"></div>
+            </div>
+            <div class="sq-field sq-field--in-wrapper">
+              <label class="sq-label">Vencimiento</label>
+              <div id="sq-expiration-date"></div>
+            </div>
+            <div class="sq-field sq-field--in-wrapper">
+              <label class="sq-label">Postal</label>
+              <div id="sq-postal-code"></div>
+            </div>
+          </div>
+
+          <div class="sq-field">
+            <button id="sq-creditcard" class="sq-button" onclick="requestCardNonce(event)">
+              Pague Ahora
+            </button>
+          </div>
+          <!--
+            After a nonce is generated it will be assigned to this hidden input field.
+          -->
+          <div id="error"></div>
+          <input type="hidden" id="card-nonce" name="nonce">
+        </form>
+      </div>
+    </div>
+    <!-- End Payment Form -->
+  </div>
+  
   </div>
   <script src="validate-amount.js"></script>
 </body>
