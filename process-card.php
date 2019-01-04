@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
   error_log("Received a non-POST request");
   echo "Request not allowed";
   http_response_code(405);
+  header("Location: index.php");
   return;
 }
 
@@ -34,17 +35,18 @@ $nonce = $_POST['nonce'];
 if (is_null($nonce)) {
   echo "Invalid card data";
   http_response_code(422);
+  header("Location: index.php");
   return;
 }
 
-if (!isset($_POST['amount'])) {
+if (empty($_POST['amount'])) {
   error_log("No Amount entered");
   echo "No Amount entered";
   http_response_code(405);
+  header("Location: index.php");
   return;
 } else {
-  $dollar = $_POST['amount'] *100;
-  var_dump($dollar);
+  $dollar = $_POST['amount'] * 100;
 } 
 
 $transactions_api = new \SquareConnect\Api\TransactionsApi();
@@ -71,9 +73,10 @@ $request_body = array (
 # a 200-level HTTP code. This block catches any exceptions that occur from the request.
 try {
   $result = $transactions_api->charge($location_id, $request_body);
-  echo "<pre>";
-  print_r($result);
-  echo "</pre>";
+  // echo "<pre>";
+  // print_r($result);
+  // echo "</pre>";
+  header("Location: thank-you.php");
 } catch (\SquareConnect\ApiException $e) {
   echo "Caught exception!<br/>";
   print_r("<strong>Response body:</strong><br/>");

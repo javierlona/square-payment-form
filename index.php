@@ -65,7 +65,6 @@ $dotenv->load();
   <div class="py-3 text-center">
    <img class="d-block mx-auto mb-4" src="dummy-logo-300x140.png" alt="" width="25%" height="25%">
     <h2>Payment Form</h2>
-    <!-- <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
   </div>
     <div class="row">
       <!-- Begin Payment Form -->
@@ -97,7 +96,6 @@ $dotenv->load();
               <div id="sq-postal-code"></div>
             </div>
           </div>
-
           <div class="sq-field">
             <button id="sq-creditcard" class="sq-button" onclick="requestCardNonce(event)">
               Pague Ahora

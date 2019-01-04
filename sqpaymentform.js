@@ -35,7 +35,7 @@ var paymentForm = new SqPaymentForm({
   // Customize the CSS for SqPaymentForm iframe elements
   inputStyles: [{
     fontSize: '16px',
-    fontFamily: 'Helvetica Neue',
+    // fontFamily: 'Helvetica Neue',
     padding: '16px',
     color: '#373F4A',
     backgroundColor: 'transparent',
@@ -108,12 +108,11 @@ var paymentForm = new SqPaymentForm({
       if (errors) {
         console.log(errors);
         // Log errors from nonce generation to the Javascript console
+        // console.log("Encountered errors:");
         var error_html = "";
-        console.log("Encountered errors:");
         errors.forEach(function (error) {
-          console.log('  ' + error.message);
+          // console.log('  ' + error.message);
           error_html += "<li> " + error.message + " </li>";
-          // alert(error.message);
         });
         document.getElementById("error").innerHTML = error_html;
         document.getElementById('sq-creditcard').disabled = false;
