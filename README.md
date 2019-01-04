@@ -1,4 +1,4 @@
-Populate an env file with the following credentials
+Populate a .env file with your Square credentials
 PROD_ACCESS_TOKEN=
 PROD_APP_ID=
 PROD_LOCATION_ID=

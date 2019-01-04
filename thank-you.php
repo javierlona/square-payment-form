@@ -1,3 +1,12 @@
+<?php 
+  if(empty($_GET['tid'])){
+    header("Location: index.php");
+  } else {
+    $safe_tid = htmlspecialchars($_GET['tid']);
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +35,9 @@
     <img class="d-block mx-auto mb-4" src="dummy-logo-300x140.png" alt="" width="25%" height="25%">
       <h2>Payment Successful</h2>
       <p class="lead">
-        <a class="btn btn-primary btn-lg" href="./" role="button">Return Home</a>
+        Transaction ID: <?php echo $safe_tid; ?>
       </p>
+      <a class="btn btn-primary btn-lg" href="./" role="button">Return Home</a>
     </div>
   </div>
   

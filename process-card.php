@@ -76,7 +76,7 @@ try {
   // echo "<pre>";
   // print_r($result);
   // echo "</pre>";
-  header("Location: thank-you.php");
+  header("Location: thank-you.php?tid=" . $result['transaction']['tenders'][0]['transaction_id']);
 } catch (\SquareConnect\ApiException $e) {
   echo "Caught exception!<br/>";
   print_r("<strong>Response body:</strong><br/>");
