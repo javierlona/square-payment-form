@@ -30,11 +30,11 @@ $dotenv->load();
         echo "\"";
       ?>;
     </script>
-    <script src="sqpaymentform.js"></script>
+    <script src="./js/sqpaymentform.js"></script>
     <!-- link to the custom styles for SqPaymentForm -->
 
-  <link rel="stylesheet" type="text/css" href="sqpaymentform.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/sqpaymentform.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
 
 </head>
 <body>
@@ -63,7 +63,7 @@ $dotenv->load();
   <div class="container">
 
   <div class="py-3 text-center">
-   <img class="d-block mx-auto mb-4" src="dummy-logo-300x140.png" alt="" width="25%" height="25%">
+   <img class="d-block mx-auto mb-4" src="./imgs/dummy-logo-300x140.png" alt="" width="25%" height="25%">
     <h2>Payment Form</h2>
   </div>
     <div class="row">
@@ -113,6 +113,6 @@ $dotenv->load();
   </div>
   
   </div>
-  <script src="validate-amount.js"></script>
+  <script src="./js/validate-amount.js"></script>
 </body>
 </html>

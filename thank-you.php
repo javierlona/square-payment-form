@@ -14,8 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Thank You</title>
-  <link rel="stylesheet" type="text/css" href="sqpaymentform.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/sqpaymentform.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
 
 </head>
 <body>
@@ -32,7 +32,7 @@
   </div>
   <div class="container">
     <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="dummy-logo-300x140.png" alt="" width="25%" height="25%">
+    <img class="d-block mx-auto mb-4" src="./imgs/dummy-logo-300x140.png" alt="" width="25%" height="25%">
       <h2>Payment Successful</h2>
       <p class="lead">
         Transaction ID: <?php echo $safe_tid; ?>
