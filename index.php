@@ -32,7 +32,10 @@ $dotenv->load();
     </script>
     <script src="sqpaymentform.js"></script>
     <!-- link to the custom styles for SqPaymentForm -->
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="sqpaymentform.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+
 </head>
 <body>
   <script>
@@ -46,24 +49,20 @@ $dotenv->load();
     });
 
   </script>
-<!-- Begin Payment Form -->
-<div class="container">
-
+  <div class="container">
+  <!-- Begin Payment Form -->
   <div class="sq-payment-form">
     <div id="sq-ccbox">
-      <!--
-        You should replace the action attribute of the form with the path of
-        the URL you want to POST the nonce to (for example, "/process-card").
-
-        You need to then make a "Charge" request to Square's transaction API with
-        this nonce to securely charge the customer.
-
-        Learn more about how to setup the server component of the payment form here:
-        https://docs.connect.squareup.com/payments/transactions/processing-payment-rest
-      -->
       <form id="nonce-form" novalidate action="./process-card.php" method="post">
+        <div class="form-group">
+          <label class="sq-label">Cantidad</label>
+          <input id="sq-amount" name="amount" type="number" required class="form-control" autofocus>
+          <div class="invalid-feedback">
+          Ingrese una cantidad válida
+          </div>
+        </div>
         <div class="sq-field">
-          <label class="sq-label">Card Number</label>
+          <label class="sq-label">Número de tarjeta</label>
           <div id="sq-card-number"></div>
         </div>
         <div class="sq-field-wrapper">
@@ -72,7 +71,7 @@ $dotenv->load();
             <div id="sq-cvv"></div>
           </div>
           <div class="sq-field sq-field--in-wrapper">
-            <label class="sq-label">Expiration</label>
+            <label class="sq-label">Vencimiento</label>
             <div id="sq-expiration-date"></div>
           </div>
           <div class="sq-field sq-field--in-wrapper">
@@ -80,12 +79,10 @@ $dotenv->load();
             <div id="sq-postal-code"></div>
           </div>
         </div>
-        <div class="sq-field">
-          <input name="amount" type="number">
-        </div>
+
         <div class="sq-field">
           <button id="sq-creditcard" class="sq-button" onclick="requestCardNonce(event)">
-            Pay Now
+            Pague Ahora
           </button>
         </div>
         <!--
@@ -98,5 +95,6 @@ $dotenv->load();
   </div>
   <!-- End Payment Form -->
   </div>
+  <script src="validate-amount.js"></script>
 </body>
 </html>

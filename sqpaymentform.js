@@ -1,9 +1,9 @@
-// function buildForm(form) {
-//   if (SqPaymentForm.isSupportedBrowser()) {
-//     form.build();
-//     form.recalculateSize();
-//   }
-// }
+function buildForm(form) {
+  if (SqPaymentForm.isSupportedBrowser()) {
+    form.build();
+    form.recalculateSize();
+  }
+}
 
 /*
  * function: requestCardNonce
@@ -42,7 +42,8 @@ var paymentForm = new SqPaymentForm({
     lineHeight: '24px',
     placeholderColor: '#CCC',
     _webkitFontSmoothing: 'antialiased',
-    _mozOsxFontSmoothing: 'grayscale'
+    _mozOsxFontSmoothing: 'grayscale',
+    
   }],
 
   // Initialize Apple Pay placeholder ID
@@ -105,14 +106,21 @@ var paymentForm = new SqPaymentForm({
      */
     cardNonceResponseReceived: function (errors, nonce, cardData) {
       if (errors) {
+        console.log(errors);
         // Log errors from nonce generation to the Javascript console
+        var error_html = "";
         console.log("Encountered errors:");
         errors.forEach(function (error) {
           console.log('  ' + error.message);
-          alert(error.message);
+          error_html += "<li> " + error.message + " </li>";
+          // alert(error.message);
         });
+        document.getElementById("error").innerHTML = error_html;
+        document.getElementById('sq-creditcard').disabled = false;
 
         return;
+      } else{
+        document.getElementById("error").innerHTML = "";
       }
       // Assign the nonce value to the hidden form field
       document.getElementById('card-nonce').value = nonce;

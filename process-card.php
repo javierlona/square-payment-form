@@ -42,9 +42,11 @@ if (!isset($_POST['amount'])) {
   echo "No Amount entered";
   http_response_code(405);
   return;
+} else {
+  $dollar = $_POST['amount'] *100;
+  var_dump($dollar);
 } 
-$dollar = $_POST['amount'] *100;
-var_dump($dollar);
+
 $transactions_api = new \SquareConnect\Api\TransactionsApi();
 
 # To learn more about splitting transactions with additional recipients,
