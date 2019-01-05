@@ -44,7 +44,8 @@ $dotenv->load();
         paymentForm.build();
         paymentForm.recalculateSize();
       } else {
-      // Show a "Browser is not supported" message to your buyer
+        // Show a "Browser is not supported" message to your buyer
+        alert("Your browser is not supported.");
       }
     });
 
